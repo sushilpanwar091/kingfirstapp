@@ -56,9 +56,9 @@ pipeline {
                 //git 'https://github.com/sushilpanwar091/kingfirstapp.git'
 
                 // Run Maven on a Unix agent.
-                sh "ssh -o StrictHostKeyChecking=no jullianna_03_hroundb_com@35.240.131.22 'rm -rf /tmp/*.jar;"
+                sh "ssh -o StrictHostKeyChecking=no jullianna_03_hroundb_com@35.240.131.22 'rm -rf /tmp/*.jar;'"
                 sh "scp -o StrictHostKeyChecking=no target/*.jar jullianna_03_hroundb_com@35.240.131.22:/tmp/"
-                sh "ssh -o StrictHostKeyChecking=no jullianna_03_hroundb_com@35.240.131.22 'java -jar /tmp/*.jar;"
+                sh "ssh -o StrictHostKeyChecking=no jullianna_03_hroundb_com@35.240.131.22 'java -jar /tmp/*.jar &;'"
                 sh "echo 'Deployment completed'"
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
